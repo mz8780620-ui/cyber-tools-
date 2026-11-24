@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Safety Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <select id="langSelect" class="lang-select">
+        <option value="en">🇬🇧 English</option>
+        <option value="bn">🇧🇩 বাংলা</option>
+        <option value="hi">🇮🇳 हिन्दी</option>
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="es">🇪🇸 Español</option>
+    </select>
+</div>
+<header><h1 data-i18n="contactTitle">Contact Us</h1></header>
+<div class="ad-space" data-i18n="advertisement">Advertisement Space</div>
+<div class="container">
+    <div class="tool-container">
+        <h2 data-i18n="contactTitle">Contact Us</h2>
+        <p class="tool-hint" data-i18n="contactHint">Messages go directly to the site owner. No email address is shown.</p>
+        <form id="secureContactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="honeypot-field" aria-hidden="true">
+                <label for="website">Leave this empty</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="name" data-i18n="yourName">Your Name</label>
+                <input type="text" id="name" name="name" required maxlength="50" placeholder="Zakir">
+            </div>
+            <div class="form-group">
+                <label for="email" data-i18n="yourEmail">Your Email</label>
+                <input type="email" id="email" name="email" required maxlength="100" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+                <label for="message" data-i18n="yourMessage">Message</label>
+                <textarea id="message" name="message" rows="5" required maxlength="500" placeholder="Write your message..."></textarea>
+            </div>
+            <button type="submit" class="btn-calc" data-i18n="sendMessage">Send Message</button>
+            <p id="formStatus" style="margin-top:12px; text-align:center; font-size:0.9rem;"></p>
+        </form>
+        <a href="index.html" class="back-link" data-i18n="backHome">← Back to Home</a>
+    </div>
+</div>
+<footer>
+    <p data-i18n="footer">© 2026 Safety Tools. All rights reserved.</p>
+    <p class="developer-name">Developed by Zakir Hussain</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com/share/19178e8thY/" target="_blank" class="social-btn btn-fb" data-i18n="fb">Facebook Page</a>
+        <a href="https://wa.me/8801918936139" target="_blank" class="social-btn btn-wa" data-i18n="wa">WhatsApp Us</a>
+    </div>
+</footer>
+<script src="lang.js"></script>
+<script>
+document.getElementById('secureContactForm').addEventListener('submit', function(e) {
+    const honeypot = document.getElementById('website').value;
+    const message = document.getElementById('message').value.toLowerCase();
+    const status = document.getElementById('formStatus');
+    if (honeypot !== '') { e.preventDefault(); status.textContent = 'Spam detected.'; status.style.color = '#dc2626'; return; }
+    const loadTime = window.performance.timing.navigationStart;
+    if (Date.now() - loadTime < 3000) { e.preventDefault(); status.textContent = 'Please take a moment.'; status.style.color = '#f59e0b'; return; }
+    const banned = ['viagra','casino','<script','sql','drop table'];
+    for (let w of banned) { if (message.includes(w)) { e.preventDefault(); status.textContent = 'Blocked content detected.'; status.style.color = '#dc2626'; return; } }
+    status.textContent = 'Sending...'; status.style.color = '#2563eb';
+});
+</script>
+</body>
+</html>
