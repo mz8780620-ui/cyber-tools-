@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Safety Check - Safety Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <select id="langSelect" class="lang-select">
+        <option value="en">🇬🇧 English</option>
+        <option value="bn">🇧🇩 বাংলা</option>
+        <option value="hi">🇮🇳 हिन्दी</option>
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="es">🇪🇸 Español</option>
+    </select>
+</div>
+<header><h1 data-i18n="emailTitle">Email Safety Check</h1></header>
+<div class="ad-space" data-i18n="advertisement">Advertisement Space</div>
+<div class="container">
+    <div class="tool-container">
+        <h2 data-i18n="emailTitle">Email Safety Check</h2>
+        <p class="tool-hint" data-i18n="emailHint">Enter an email to check its format and learn about safety risks.</p>
+        <div class="form-group">
+            <label data-i18n="emailInput">Email Address</label>
+            <input type="email" id="emailInput" placeholder="user@example.com" autocomplete="off">
+        </div>
+        <button class="btn-calc" onclick="checkEmail()" data-i18n="checkBtn">Check Email</button>
+        <div id="emailResult" class="result-box"></div>
+        <a href="index.html" class="back-link" data-i18n="backHome">← Back to Home</a>
+    </div>
+</div>
+<footer>
+    <p data-i18n="footer">© 2026 Safety Tools. All rights reserved.</p>
+    <p class="developer-name">Developed by Zakir Hussain</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com/share/19178e8thY/" target="_blank" class="social-btn btn-fb" data-i18n="fb">Facebook Page</a>
+        <a href="https://wa.me/8801918936139" target="_blank" class="social-btn btn-wa" data-i18n="wa">WhatsApp Us</a>
+    </div>
+</footer>
+<script src="lang.js"></script>
+<script src="tools.js"></script>
+</body>
+</html>
