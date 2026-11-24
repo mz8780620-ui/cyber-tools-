@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Combination Calculator - Safety Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-bar">
+    <select id="langSelect" class="lang-select">
+        <option value="en">🇬🇧 English</option>
+        <option value="bn">🇧🇩 বাংলা</option>
+        <option value="hi">🇮🇳 हिन्दी</option>
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="es">🇪🇸 Español</option>
+    </select>
+</div>
+<header><h1 data-i18n="numTitle">Number Combination Calculator</h1></header>
+<div class="ad-space" data-i18n="advertisement">Advertisement Space</div>
+<div class="container">
+    <div class="tool-container">
+        <h2 data-i18n="numTitle">Number Combination Calculator</h2>
+        <p class="tool-hint" data-i18n="numHint">Enter digits (e.g., 1234) to see how many unique arrangements exist.</p>
+        <div class="form-group">
+            <label data-i18n="numInput">Digits (1-9)</label>
+            <input type="text" id="numInput" placeholder="1234" maxlength="9" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label data-i18n="numMode">Calculation Mode</label>
+            <select id="numMode">
+                <option value="permutation" data-i18n="modePerm">Permutation (no repeat)</option>
+                <option value="combination" data-i18n="modeComb">Combination (with repeat)</option>
+            </select>
+        </div>
+        <button class="btn-calc" onclick="calculateCombination()" data-i18n="calcBtn">Calculate</button>
+        <div id="numResult" class="result-box"></div>
+        <a href="index.html" class="back-link" data-i18n="backHome">← Back to Home</a>
+    </div>
+</div>
+<footer>
+    <p data-i18n="footer">© 2026 Safety Tools. All rights reserved.</p>
+    <p class="developer-name">Developed by Zakir Hussain</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com/share/19178e8thY/" target="_blank" class="social-btn btn-fb" data-i18n="fb">Facebook Page</a>
+        <a href="https://wa.me/8801918936139" target="_blank" class="social-btn btn-wa" data-i18n="wa">WhatsApp Us</a>
+    </div>
+</footer>
+<script src="lang.js"></script>
+<script src="tools.js"></script>
+</body>
+</html>
